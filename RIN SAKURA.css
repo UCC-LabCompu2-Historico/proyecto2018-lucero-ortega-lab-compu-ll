@@ -1,0 +1,31 @@
+#titulo{
+    text-decoration-color: white;
+    background-color: black;
+    font-weight: bolder;
+    padding: inherit;
+}
+
+body {
+    background-image: url("https://img1.cgtrader.com/items/148070/b23c0f179d/large/matrix-dojo-3d-model-max-mat.jpg");
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#textointro {
+    text-decoration-color: white;
+    font-weight: bold;
+    padding-left: inherit;
+}
+
+.imagenprot{
+    padding-right: auto;
+
+}
+
+.creadoras{
+    font-weight: bold;
+    text-decoration-color: white;
+    background: black;
+    padding: 5px;
+}
