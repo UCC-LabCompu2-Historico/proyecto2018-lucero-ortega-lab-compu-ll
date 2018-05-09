@@ -10,6 +10,10 @@ body {
     text-align: center;
     color: white;
     font-weight: bold;
+    padding: inherit;
+    margin: auto;
+    position: relative;
+    bottom: 50%;
 }
 
 #textointro {
@@ -22,10 +26,20 @@ body {
     padding-right: auto;
 
 }
+aside{
+    margin: 50px;
+    position: relative}
+
+
+button{
+    bottom: 90px;
+}
 
 .creadoras{
     font-weight: bold;
     text-decoration-color: white;
     background: black;
     padding: 5px;
+    position: fixed;
+    bottom: 40px;
 }
