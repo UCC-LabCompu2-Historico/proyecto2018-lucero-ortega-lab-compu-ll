@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>Formulario</title>
-    <link rel="stylesheet" type="text/css" href="formulario.css">
+    <link rel="stylesheet" type="text/css" href="estilos/formulario.css">
+    <script src="Paginajava.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
-        <h2>¡Elige la mejor estrategia de ataque!</h2>
+    <h2>¡Elige la mejor estrategia de ataque!</h2>
 </header>
 
 <section>
-    <form action="Tercerapag.html">
-         <div id="celdas">
+    <form id="formValores">
+        <div id="celdas">
 
-                <h1 id="titulo1">Velocidad</h1>
-                <input type="number">
-                <select name="velocidad">
-                    <option value="m/s">m/s</option>
-                    <option value="k/h">k/h</option>
-                </select>
-                 <h1 id="titulo2">Peso de nuesto héroe</h1>
-                <input name="pr" type="number">
-                <select name="pesoprot">
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                </select>
-                <h1 id="titulo3">Peso de nuestro enemigo</h1>
-                <input name="pe" type="number">
-                <select name="pe">
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                </select>
-         </div>
-        <br>
-        <div class="button">
-        <form action="Tercerapag.html">
-            <button type="submit">Hit!</button>
-        </form>
+            <h1 id="titulo1">Velocidad</h1>
+            <input type="number" id="vel_valor">
+            <select name="velocidad" id="vel_unidad">
+                <option value="m/s">m/s</option>
+                <option value="k/h">k/h</option>
+            </select>
+
+            <h1 id="titulo2">Peso de nuesto héroe</h1>
+            <input name="pr" type="number" id="peso_valor">
+            <select name="pesoprot" id="peso_unidad">
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+            </select>
+
+            <h1 id="titulo3">Peso de nuestro enemigo</h1>
+            <input name="pe" type="number" id="pes_valor">
+            <select name="pe" id="pes_unidad">
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+            </select>
         </div>
     </form>
+    <br>
+    <button onclick="pasarValor()">Hit!</button>
+
 </section>
 </body>
 </html>
