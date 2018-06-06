@@ -11,33 +11,56 @@
 
 <body>
 <script>
+
     function img_canvas() {
         //recojemos el canvas poniendo la id del canvas html5 para relacionarlo
         var canvas = document.getElementById("dibujo");
         //Cojemos la 2D para dibujar en él
         var context = canvas.getContext("2d");
         //creamos la nueva imagen
-        var img = new Image();
+
+        // Draw dummy
+        var dummy_img = new Image();
         //le decimos la ruta de la imagen, en este caso html5.jpg
-        img.src = "Imágenes/Villano.jpg";
+        dummy_img.src = "Imágenes/Training_Dummy.png";
         //pasamos la imagen al 2d del canvas y se dibujará
         //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-        context.drawImage(img, 0, 0);
+        dummy_img.onload = function() {
+            // x, y, width, height
+            context.drawImage(dummy_img, 30, 30, 70, 90);
+        };
+
+        // Draw Tail Lung
+        var tai_lung_img = new Image();
+        //le decimos la ruta de la imagen, en este caso html5.jpg
+        tai_lung_img.src = "Imágenes/Tai_Lung.png";
+        //pasamos la imagen al 2d del canvas y se dibujará
+        //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
+        tai_lung_img.onload = function() {
+            // x, y, width, height
+            context.drawImage(tai_lung_img, 160, 30, 100, 80);
+        };
     }
 
     function aviso() {
         alert("Pegale mas fuerte");
 
     }
+
+    window.onload = function () {
+        img_canvas();
+    }
 </script>
-   <div>
-       <canvas id="dibujo">
+
+   <div class="wrapper">
+
+       <canvas class="img-canvas" id="dibujo">
 
        </canvas>
 
-
-
    </div>
+
+    <!--
    <section>
        <button onclick="img_canvas()">Graficar</button>
 
@@ -46,11 +69,12 @@
            <button type="submit">Intentalo de nuevo</button>
        </form>
    </section>
-<aside>
-    <h2 id="Titulo1">Velocidad:</h2>
-    <h2 id="Titulo2">Peso de nuestro héroe:</h2>
-    <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
-</aside>
+    <aside>
+        <h2 id="Titulo1">Velocidad:</h2>
+        <h2 id="Titulo2">Peso de nuestro héroe:</h2>
+        <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
+    </aside>
+    -->
 </body>
 
 </html>
