@@ -10,47 +10,6 @@
 </head>
 
 <body>
-<script>
-
-    function img_canvas() {
-        //recojemos el canvas poniendo la id del canvas html5 para relacionarlo
-        var canvas = document.getElementById("dibujo");
-        //Cojemos la 2D para dibujar en él
-        var context = canvas.getContext("2d");
-        //creamos la nueva imagen
-
-        // Draw dummy
-        var dummy_img = new Image();
-        //le decimos la ruta de la imagen, en este caso html5.jpg
-        dummy_img.src = "Imágenes/Training_Dummy.png";
-        //pasamos la imagen al 2d del canvas y se dibujará
-        //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-        dummy_img.onload = function() {
-            // x, y, width, height
-            context.drawImage(dummy_img, 30, 30, 70, 90);
-        };
-
-        // Draw Tail Lung
-        var tai_lung_img = new Image();
-        //le decimos la ruta de la imagen, en este caso html5.jpg
-        tai_lung_img.src = "Imágenes/Tai_Lung.png";
-        //pasamos la imagen al 2d del canvas y se dibujará
-        //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-        tai_lung_img.onload = function() {
-            // x, y, width, height
-            context.drawImage(tai_lung_img, 160, 30, 100, 80);
-        };
-    }
-
-    function aviso() {
-        alert("Pegale mas fuerte");
-
-    }
-
-    window.onload = function () {
-        img_canvas();
-    }
-</script>
 
    <div class="wrapper">
 
@@ -75,6 +34,59 @@
         <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
     </aside>
     -->
+
+
+   <script>
+
+       // Draw dummy
+       var img =[
+           new Image(),
+           new Image(),
+       ];
+
+       //le decimos la ruta de la imagen, en este caso html5.jpg
+       img[0].src = "Imágenes/Training_Dummy.png";
+       //pasamos la imagen al 2d del canvas y se dibujará
+       //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
+//       dummy_img.onload = function() {
+//           // x, y, width, height
+//           context.drawImage(dummy_img, 30, 30, 70, 90);
+//       };
+
+       //le decimos la ruta de la imagen, en este caso html5.jpg
+       img[1].src = "Imágenes/Tai_Lung.png";
+       //pasamos la imagen al 2d del canvas y se dibujará
+       //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
+//       tai_lung_img.onload = function() {
+//           // x, y, width, height
+//           context.drawImage(tai_lung_img, 160, 30, 100, 80);
+//       };
+
+       var canvas = document.getElementById("dibujo");
+       var context = canvas.getContext("2d");
+        var img_a_mostrar = 0;
+        var cont = 0;
+       function img_canvas() {
+
+            cont++;
+            if(cont > 5)
+                parar();
+           context.drawImage(img[img_a_mostrar], 30, 30,100,100);
+            img_a_mostrar++;
+            if(img_a_mostrar>1)
+                img_a_mostrar=0;
+       }
+
+        var mi_intervalo = setInterval(img_canvas,1000);
+
+        function parar() {
+            clearInterval(mi_intervalo);
+        }
+       function aviso() {
+           alert("Pegale mas fuerte");
+
+       }
+   </script>
 </body>
 
 </html>
