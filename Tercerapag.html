@@ -3,49 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="Tercerapag.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="estilos/Tercerapag.css">
+    <script src="Paginajava.js" type="text/javascript"></script>
 </head>
 
-<body>
-<script>
-    function img_canvas() {
-        //recojemos el canvas poniendo la id del canvas html5 para relacionarlo
-        var canvas = document.getElementById("dibujo");
-        //Cojemos la 2D para dibujar en él
-        var context = canvas.getContext("2d");
-        //creamos la nueva imagen
-        var img = new Image();
-        //le decimos la ruta de la imagen, en este caso html5.jpg
-        img.src = "Imágenes/Villano.jpg";
-        //pasamos la imagen al 2d del canvas y se dibujará
-        //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-        context.drawImage(img, 0, 0);
-    }
+<body onload="cargarValor()">
+<div>
+    <canvas id="dibujo">
+    </canvas>
+</div>
+<section>
+    <button onclick="img_canvas()">Graficar</button>
 
-    function aviso() {
-        alert("Pegale mas fuerte");
+    <form action="FormularioRS.html">
 
-    }
-</script>
-   <div>
-       <canvas id="dibujo">
-
-       </canvas>
-
-
-
-   </div>
-   <section>
-       <button onclick="img_canvas()">Graficar</button>
-
-       <form action="FormularioRS.html">
-
-           <button type="submit">Intentalo de nuevo</button>
-       </form>
-   </section>
+        <button type="submit">Intentalo de nuevo</button>
+    </form>
+</section>
 <aside>
     <h2 id="Titulo1">Velocidad:</h2>
     <h2 id="Titulo2">Peso de nuestro héroe:</h2>
