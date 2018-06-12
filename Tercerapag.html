@@ -18,8 +18,6 @@
        </canvas>
 
    </div>
-
-
    <section>
        <button onclick="img_canvas()">Graficar</button>
 
@@ -28,14 +26,11 @@
            <button type="submit">Intentalo de nuevo</button>
        </form>
    </section>
-    <aside>
+    <div class="resultados">
         <h2 id="Titulo1">Velocidad:</h2>
         <h2 id="Titulo2">Peso de nuestro héroe:</h2>
         <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
-    </aside>
-
-
-
+    </div>
    <script>
 
        // Draw dummy
@@ -45,7 +40,7 @@
        ];
 
        //le decimos la ruta de la imagen, en este caso html5.jpg
-       img[0].src = "Imágenes/1.png";
+       img[0].src = "Escritorio/.png";
        img[1].src = "Imágenes/";
 
        //pasamos la imagen al 2d del canvas y se dibujará
@@ -54,15 +49,8 @@
 //           // x, y, width, height
 //           context.drawImage(dummy_img, 30, 30, 70, 90);
 //       };
+       img[3].src = "Imágenes/1.png";
 
-       //le decimos la ruta de la imagen, en este caso html5.jpg
-       img[1].src = "Imágenes/1.png";
-       //pasamos la imagen al 2d del canvas y se dibujará
-       //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-//       tai_lung_img.onload = function() {
-//           // x, y, width, height
-//           context.drawImage(tai_lung_img, 160, 30, 100, 80);
-//       };
 
        var canvas = document.getElementById("dibujo");
        var context = canvas.getContext("2d");

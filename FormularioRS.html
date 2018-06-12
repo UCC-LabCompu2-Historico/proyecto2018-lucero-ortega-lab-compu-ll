@@ -10,6 +10,29 @@
 <header>
         <h2>¡Elige la mejor estrategia de ataque!</h2>
 </header>
+<script>
+    function pasarValor() {
+        var el = document.getElementById("formValores").elements;
+        var urlVar = 'Tercerapag.html#' + el["vel_valor"].value + "#" + el["vel_unidad"].value + "#"
+            + el["peso_valor"].value + "#" + el["peso_unidad"].value + "#"
+            + el["pes_valor"].value + "#" + el["pes_unidad"].value;
+
+        window.location.assign(urlVar);
+    }
+
+    function cargarValor() {
+        var elArray = window.location.hash.split('#');
+
+        var vel_valor = elArray[1];
+        var vel_unidad = elArray[2];
+        var peso_valor = elArray[3];
+        var peso_unidad = elArray[4];
+        var pes_valor = elArray[5];
+        var pes_unidad = elArray[6];
+
+        //Realizar algún cálculo o mostrar los datos en la página
+    }
+</script>
 
 <section>
     <form action="Tercerapag.html">
