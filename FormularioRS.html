@@ -13,9 +13,8 @@
 <script>
     function pasarValor() {
         var el = document.getElementById("formValores").elements;
-        var urlVar = 'Tercerapag.html#' + el["vel_valor"].value + "#" + el["vel_unidad"].value + "#"
-            + el["peso_valor"].value + "#" + el["peso_unidad"].value + "#"
-            + el["pes_valor"].value + "#" + el["pes_unidad"].value;
+        var urlVar = 'Tercerapag.html#' + el["ac_valor"].value + "#" + el["ac_unidad"].value + "#"
+            + el["peso_valor"].value + "#" + el["peso_unidad"].value;
 
         window.location.assign(urlVar);
     }
@@ -23,12 +22,10 @@
     function cargarValor() {
         var elArray = window.location.hash.split('#');
 
-        var vel_valor = elArray[1];
-        var vel_unidad = elArray[2];
+        var ac_valor = elArray[1];
+        var ac_unidad = elArray[2];
         var peso_valor = elArray[3];
         var peso_unidad = elArray[4];
-        var pes_valor = elArray[5];
-        var pes_unidad = elArray[6];
 
         //Realizar algún cálculo o mostrar los datos en la página
     }
@@ -40,21 +37,15 @@
     <form action="Tercerapag.html">
          <div id="celdas">
 
-                <h1 id="titulo1">Velocidad</h1>
+                <h1 id="titulo1">Aceleración</h1>
                 <input type="number">
-                <select name="velocidad">
-                    <option value="m/s">m/s</option>
-                    <option value="k/h">k/h</option>
+                <select name="aceleracion">
+                    <option value="m/s">m/s2</option>
+                    <option value="k/h">k/h2</option>
                 </select>
                  <h1 id="titulo2">Peso de nuesto héroe</h1>
                 <input name="pr" type="number">
                 <select name="pesoprot">
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                </select>
-                <h1 id="titulo3">Peso de nuestro enemigo</h1>
-                <input name="pe" type="number">
-                <select name="pe">
                     <option value="kg">kg</option>
                     <option value="g">g</option>
                 </select>

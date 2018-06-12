@@ -26,11 +26,7 @@
            <button type="submit">Intentalo de nuevo</button>
        </form>
    </section>
-    <div class="resultados">
-        <h2 id="Titulo1">Velocidad:</h2>
-        <h2 id="Titulo2">Peso de nuestro héroe:</h2>
-        <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
-    </div>
+
    <script>
        var img = []
        // Draw dummy
@@ -74,10 +70,11 @@
            iniciar();
            var newtons = calculo();
 
-           if(newtons>200){
+           var resultado = calculo();
+           if(resultado>200){
                too_strong_interval = setInterval(too_strong, 1000)
            };
-           if(newtons<200){
+           if(resultado<200){
                too_slow();
            }
        }
@@ -87,7 +84,7 @@
            context.drawImage(villano, 180, 30,100,100);
            x+=40;
            cont++;
-           console.log(x)
+
 
            if(cont > 5) {
                x= x - 80;
@@ -95,7 +92,6 @@
                context.drawImage(img[img_a_mostrar], x, 30,100,100);
            }
            if (cont === 10){
-               console.log("termine")
                clearInterval(too_strong_interval);
            }
            context.drawImage(img[cont], x, 30,100,100);
@@ -147,8 +143,11 @@
            var a;
            var masa;
            n=masa*a;
+           console.log (n);
            return 450;
+
        }
+
 
 
         //var mi_intervalo = setInterval(img_canvas,100);
@@ -162,6 +161,9 @@
 
        }
    </script>
+   <div class="resultados">
+       <h2 id="Titulo1">Fuerza:</h2><p>calculo()</p>
+   </div>
 </body>
 
 </html>
