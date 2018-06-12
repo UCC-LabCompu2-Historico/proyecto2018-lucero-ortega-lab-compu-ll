@@ -32,46 +32,131 @@
         <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
     </div>
    <script>
-
+       var img = []
        // Draw dummy
-       var img =[
-           new Image(),
-           new Image(),
-       ];
+       var villano = new Image();
+       for(var i=0;i<13;i++){
+           img.push(new Image());
+       };
+       villano.src = "Imágenes/Villano.jpg";
+       var x  = 30;
+       var canvas ;
+       var context;
+       var img_a_mostrar = 0;
+       var cont = 0;
+       var too_strong_interval ;
 
-       //le decimos la ruta de la imagen, en este caso html5.jpg
-       img[0].src = "Imágenes/secuencia2.";
-       img[1].src = "Imágenes/";
+       function parseURLParams(url) {
+           var queryStart = url.indexOf("?") + 1,
+               queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+               query = url.slice(queryStart, queryEnd - 1),
+               pairs = query.replace(/\+/g, " ").split("&"),
+               parms = {}, i, n, v, nv;
 
-       //pasamos la imagen al 2d del canvas y se dibujará
-       //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-//       dummy_img.onload = function() {
-//           // x, y, width, height
-//           context.drawImage(dummy_img, 30, 30, 70, 90);
-//       };
-       img[3].src = "Imágenes/1.png";
+           if (query === url || query === "") return;
 
+           for (i = 0; i < pairs.length; i++) {
+               nv = pairs[i].split("=", 2);
+               n = decodeURIComponent(nv[0]);
+               v = decodeURIComponent(nv[1]);
 
-       var canvas = document.getElementById("dibujo");
-       var context = canvas.getContext("2d");
-        var img_a_mostrar = 0;
-        var cont = 0;
-       function img_canvas() {
-
-            cont++;
-            if(cont > 5)
-                parar();
-           context.drawImage(img[img_a_mostrar], 30, 30,100,100);
-            img_a_mostrar++;
-            if(img_a_mostrar>1)
-                img_a_mostrar=0;
+               if (!parms.hasOwnProperty(n)) parms[n] = [];
+               parms[n].push(nv.length === 2 ? v : null);
+           }
+           return parms;
        }
 
-        var mi_intervalo = setInterval(img_canvas,1000);
+       window.onload = function () {
+           canvas = document.getElementById("dibujo");
+           context  = canvas.getContext("2d");
+           var url = window.location.href;
+           var data = parseURLParams(url);
+           iniciar();
+           var newtons = calculo();
+
+           if(newtons>200){
+               too_strong_interval = setInterval(too_strong, 1000)
+           };
+           if(newtons<200){
+               too_slow();
+           }
+       }
+
+       function too_strong(){
+           context.clearRect(0, 0, canvas.width, canvas.height);
+           context.drawImage(villano, 180, 30,100,100);
+           x+=40;
+           cont++;
+           console.log(x)
+
+           if(cont > 5) {
+               x= x - 80;
+               context.drawImage(villano, 370, 80,100,100);
+               context.drawImage(img[img_a_mostrar], x, 30,100,100);
+           }
+           if (cont === 10){
+               console.log("termine")
+               clearInterval(too_strong_interval);
+           }
+           context.drawImage(img[cont], x, 30,100,100);
+           img_a_mostrar++;
+           if(img_a_mostrar>2){
+               img_a_mostrar=0;
+           }
+
+       }
+
+       function too_slow() {
+
+       }
+
+       function iniciar() {
+           //le decimos la ruta de la imagen, en este caso html5.jpg
+           img[0].src = "Imágenes/secuencia2.PNG";
+           img[1].src = "Imágenes/secuencia3.PNG";
+           //pasamos la imagen al 2d del canvas y se dibujará
+           //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
+           img[2].src = "Imágenes/secuencia4.PNG";
+
+           img[0].onload = function(){
+               context.drawImage(img[0], 30, 30,100,100);
+           }
+           context.drawImage(img[2], 30, 30,100,100);
+           context.drawImage(villano, 180, 30,100,100);
+           villano.onload = function () {
+               context.drawImage(villano, 180, 30,100,100);
+           }
+       }
+
+       function img_canvas() {
+           cont++;
+           if(cont > 5) {
+               parar();
+           }
+
+           context.drawImage(img[img_a_mostrar], x, 30,100,100);
+           context.drawImage(villano, 180, 30,100,100);
+           img_a_mostrar++;
+           if(img_a_mostrar>1){
+               img_a_mostrar=0;
+           }
+       }
+
+       function calculo(){
+           var n;
+           var a;
+           var masa;
+           n=masa*a;
+           return 450;
+       }
+
+
+        //var mi_intervalo = setInterval(img_canvas,100);
 
         function parar() {
             clearInterval(mi_intervalo);
         }
+
        function aviso() {
            alert("Pegale mas fuerte");
 

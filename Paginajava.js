@@ -21,7 +21,7 @@ img[1].src = "Imágenes/";
 //       dummy_img.onload = function() {
 //           // x, y, width, height
 //           context.drawImage(dummy_img, 30, 30, 70, 90);
-//       };
+//
 
 //le decimos la ruta de la imagen, en este caso html5.jpg
 img[1].src = "Imágenes/1.png";
