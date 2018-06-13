@@ -1,0 +1,41 @@
+#titulo{
+    text-decoration-color: white;
+    background-color: black;
+    font-weight: bolder;
+    padding: inherit;
+}
+
+body {
+    text-align: center;
+
+
+
+}
+
+#textointro {
+    text-decoration-color: white;
+    font-weight: bold;
+    padding-left: inherit;
+}
+
+.imagenprot{
+    padding-right: auto;
+
+}
+aside{
+    margin: 50px;
+    position: relative}
+
+
+button{
+    bottom: 90px;
+}
+
+.creadoras{
+    font-weight: bold;
+    text-decoration-color: white;
+    background: black;
+    padding: 5px;
+    position: fixed;
+    bottom: 40px;
+}

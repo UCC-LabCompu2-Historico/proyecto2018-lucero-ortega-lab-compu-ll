@@ -1,0 +1,37 @@
+
+header{
+    text-decoration-color: white;
+    background-color: black;
+    font-weight: bolder;
+    padding: 10px;
+}
+body {
+    background-image: url("https://i.pinimg.com/564x/7d/e9/ab/7de9ab3edc21473ef554546c1a448177--samurai-jack-neo-tokyo.jpg");
+    text-align: center;
+    text-decoration-color: black;
+    color: white;
+}
+#titulo1{
+    border-left-width: 10vh ;
+    background-color: black;
+}
+#titulo2{
+    border-left-width: 10vh;
+    background-color: black;
+}
+#titulo3{
+    border-left-width: 10vh;
+    background-color: black;
+}
+form{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10vh;
+}
+
+.button{
+    padding: auto;
+}
+
+
+
