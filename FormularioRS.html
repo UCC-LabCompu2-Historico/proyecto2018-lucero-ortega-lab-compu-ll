@@ -13,39 +13,39 @@
 <script>
     function pasarValor() {
         var el = document.getElementById("formValores").elements;
-        var urlVar = 'Tercerapag.html#' + el["ac_valor"].value + "#" + el["ac_unidad"].value + "#"
-            + el["peso_valor"].value + "#" + el["peso_unidad"].value;
+        var urlVar = 'Tercerapag.html#' + el["aceleracion"].value + "#" + el["unidad1"].value + "#"
+            + el["pesoprot"].value + "#" + el["unidad2"].value + "#" + el["unidad1"].value;
 
         window.location.assign(urlVar);
     }
-
-    function cargarValor() {
-        var elArray = window.location.hash.split('#');
-
-        var ac_valor = elArray[1];
-        var ac_unidad = elArray[2];
-        var peso_valor = elArray[3];
-        var peso_unidad = elArray[4];
-
-        //Realizar algún cálculo o mostrar los datos en la página
+    function comprobar() {
+        var valorp = document.getElementById("pesprot").value
+        var valorac = document.getElementById("ac").value
+        if (valorp < 0) {
+            alert('[ERROR] El luchador es demasiado delgado. ¡Lo van a destrozar!');
+            return false;
+        }
+        if (valorac == 0){
+            alert ('[ERROR] ¡Muévete,flojo!');
+            return false;
+        }
+        return true;
     }
-
-
 </script>
 
 <section>
-    <form action="Tercerapag.html">
+    <form id="formu" action="Tercerapag.html" onsubmit="return comprobar()">
          <div id="celdas">
 
-                <h1 id="titulo1">Aceleración</h1>
-                <input type="number">
-                <select name="aceleracion">
+                <label id="titulo1">Aceleración</label>
+                <input name="aceleracion" id= "ac" type="number">
+                <select name="unidad1">
                     <option value="m/s">m/s2</option>
                     <option value="k/h">k/h2</option>
                 </select>
-                 <h1 id="titulo2">Peso de nuesto héroe</h1>
-                <input name="pr" type="number">
-                <select name="pesoprot">
+                 <label id="titulo2">Peso de nuesto héroe</label>
+                <input id = "pesprot" name="pesprot" type="number">
+                <select name="unidad2">
                     <option value="kg">kg</option>
                     <option value="g">g</option>
                 </select>
@@ -53,7 +53,7 @@
         <br>
         <div class="button">
         <form action="Tercerapag.html">
-            <button type="submit">Hit!</button>
+            <button type="submit" >Hit!</button>
         </form>
         </div>
     </form>

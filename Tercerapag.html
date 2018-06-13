@@ -19,10 +19,7 @@
 
    </div>
    <section>
-       <button onclick="img_canvas()">Graficar</button>
-
        <form action="FormularioRS.html">
-
            <button type="submit">Intentalo de nuevo</button>
        </form>
    </section>
@@ -31,16 +28,15 @@
        var img = []
        // Draw dummy
        var villano = new Image();
-       for(var i=0;i<13;i++){
+       for(var i=0;i<6;i++){
            img.push(new Image());
-       };
-       villano.src = "Imágenes/Villano.jpg";
+       }
+       villano.src = "Imágenes/Training_Dummy.png";
        var x  = 0.5;
        var canvas ;
        var context;
        var img_a_mostrar = 0;
        var cont = 0;
-       var too_strong_interval ;
 
        function parseURLParams(url) {
            var queryStart = url.indexOf("?") + 1,
@@ -62,108 +58,65 @@
            return parms;
        }
 
+
        window.onload = function () {
            canvas = document.getElementById("dibujo");
            context  = canvas.getContext("2d");
            var url = window.location.href;
            var data = parseURLParams(url);
            iniciar();
-           var newtons = calculo();
-
-           var resultado = calculo();
-           if(resultado>200){
-               too_strong_interval = setInterval(too_strong, 1000)
-           };
-           if(resultado<200){
-               too_slow();
-           }
-       }
-
-       function too_strong(){
-           context.clearRect(0, 0, canvas.width, canvas.height);
-           context.drawImage(villano, 180, 30,100,100);
-           x+=40;
-           cont++;
-
-
-           if(cont > 5) {
-               x= x - 80;
-               context.drawImage(villano, 370, 80,100,100);
-               context.drawImage(img[img_a_mostrar], x, 30,100,100);
-           }
-           if (cont === 10){
-               clearInterval(too_strong_interval);
-           }
-           context.drawImage(img[cont], x, 30,100,100);
-           img_a_mostrar++;
-           if(img_a_mostrar>2){
-               img_a_mostrar=0;
-           }
-
-       }
-
-       function too_slow() {
-
-       }
-
+       };
        function iniciar() {
-           //le decimos la ruta de la imagen, en este caso html5.jpg
-           img[0].src = "Imágenes/secuencia7.PNG";
-           img[1].src = "Imágenes/secuencia9.PNG";
-           img[2].src = "Imágenes/secuencia10.PNG";
-           img[3].src = "Imágenes/secuencia11.PNG";
-
-
+           img[0].src = "Imágenes/secuencia3.PNG";
+           img[1].src = "Imágenes/secuencia7.PNG";
+           img[2].src = "Imágenes/secuencia9.PNG";
+           img[3].src = "Imágenes/secuencia10.PNG";
+           img[4].src = "Imágenes/secuencia11.PNG";
 
            img[0].onload = function(){
                context.drawImage(img[0], 10, 30,100,100);
            }
-           context.drawImage(villano, 180, 30,100,100);
-           villano.onload = function () {
-               context.drawImage(villano, 180, 30,100,100);
-           }
+           context.drawImage(villano, 230, 30,50,100);
        }
-
        function img_canvas() {
            cont++;
-           if(cont > 5) {
+           if(cont > 14) {
                parar();
            }
-
+            x+=9;
            context.drawImage(img[img_a_mostrar], x, 30,100,100);
-           context.drawImage(villano, 180, 30,100,100);
+           context.drawImage(villano, 230, 30,50,100);
            img_a_mostrar++;
-           if(img_a_mostrar>1){
+           if(img_a_mostrar>4){
                img_a_mostrar=0;
            }
        }
-
-       function calculo(){
-           var n;
-           var a;
-           var masa;
-           n=masa*a;
-           console.log (n);
-           return 450;
-
-       }
-
-
-
-        //var mi_intervalo = setInterval(img_canvas,100);
-
-        function parar() {
+       var mi_intervalo = setInterval(img_canvas,100);
+       function parar() {
             clearInterval(mi_intervalo);
         }
+       function cargarValor() {
+           var elArray = window.location.hash.split('#');
+           var ac_valor = elArray[1];
+           var ac_unidad = elArray[2];
+           var peso_valor = elArray[3];
+           var peso_unidad = elArray[4];
+           n=ac_valor*peso_valor;
 
-       function aviso() {
-           alert("Pegale mas fuerte");
-
+           return n;
        }
+       function posibilidades() {
+           var pos = cargarValor();
+            if ( pos > 2000) {
+                alert("MUY FUERTE");
+            }
+            if ( pos < 2000) {
+                alert ("MUY FLOJO");
+            }
+        }
    </script>
-   <div class="resultados">
-       <h2 id="Titulo1">Fuerza:</h2><p>calculo()</p>
-   </div>
+
+
 </body>
 
 </html>
