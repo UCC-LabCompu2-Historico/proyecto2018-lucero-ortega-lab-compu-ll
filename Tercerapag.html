@@ -35,7 +35,7 @@
            img.push(new Image());
        };
        villano.src = "Imágenes/Villano.jpg";
-       var x  = 30;
+       var x  = 0.5;
        var canvas ;
        var context;
        var img_a_mostrar = 0;
@@ -108,16 +108,16 @@
 
        function iniciar() {
            //le decimos la ruta de la imagen, en este caso html5.jpg
-           img[0].src = "Imágenes/secuencia2.PNG";
-           img[1].src = "Imágenes/secuencia3.PNG";
-           //pasamos la imagen al 2d del canvas y se dibujará
-           //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-           img[2].src = "Imágenes/secuencia4.PNG";
+           img[0].src = "Imágenes/secuencia7.PNG";
+           img[1].src = "Imágenes/secuencia9.PNG";
+           img[2].src = "Imágenes/secuencia10.PNG";
+           img[3].src = "Imágenes/secuencia11.PNG";
+
+
 
            img[0].onload = function(){
-               context.drawImage(img[0], 30, 30,100,100);
+               context.drawImage(img[0], 10, 30,100,100);
            }
-           context.drawImage(img[2], 30, 30,100,100);
            context.drawImage(villano, 180, 30,100,100);
            villano.onload = function () {
                context.drawImage(villano, 180, 30,100,100);
