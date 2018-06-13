@@ -6,14 +6,10 @@
 }
 
 body {
-    background-image: url("https://img1.cgtrader.com/items/148070/b23c0f179d/large/matrix-dojo-3d-model-max-mat.jpg");
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    padding: inherit;
-    margin: auto;
-    position: relative;
-    bottom: 50%;
+text-align: center;
+
+
+
 }
 
 #textointro {

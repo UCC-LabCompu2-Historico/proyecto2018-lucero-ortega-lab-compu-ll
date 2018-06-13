@@ -7,6 +7,7 @@
     <script src="Paginajava.js" type="text/javascript"></script>
 </head>
 
+<<<<<<< HEAD
 <body onload="cargarValor()">
 
 
@@ -15,6 +16,15 @@
     <canvas class="img-canvas" id="dibujo">
 
     </canvas>
+=======
+<body>
+
+   <div class="wrapper">
+
+       <canvas class="img-canvas" id="dibujo">
+
+       </canvas>
+>>>>>>> 64d0828a281a69ff4023cdcc5d2a1d42a94a6207
 
 </div>
 <section>
@@ -22,6 +32,7 @@
 
     <form action="FormularioRS.html">
 
+<<<<<<< HEAD
         <button type="submit">Intentalo de nuevo</button>
     </form>
 </section>
@@ -30,6 +41,149 @@
     <h2 id="Titulo2">Peso de nuestro héroe:</h2>
     <h2 id="Titulo3">Peso de nuestro enemigo:</h2>
 </aside>
+=======
+           <button type="submit">Intentalo de nuevo</button>
+       </form>
+   </section>
+
+   <script>
+       var img = []
+       // Draw dummy
+       var villano = new Image();
+       for(var i=0;i<13;i++){
+           img.push(new Image());
+       };
+       villano.src = "Imágenes/Villano.jpg";
+       var x  = 0.5;
+       var canvas ;
+       var context;
+       var img_a_mostrar = 0;
+       var cont = 0;
+       var too_strong_interval ;
+
+       function parseURLParams(url) {
+           var queryStart = url.indexOf("?") + 1,
+               queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+               query = url.slice(queryStart, queryEnd - 1),
+               pairs = query.replace(/\+/g, " ").split("&"),
+               parms = {}, i, n, v, nv;
+
+           if (query === url || query === "") return;
+
+           for (i = 0; i < pairs.length; i++) {
+               nv = pairs[i].split("=", 2);
+               n = decodeURIComponent(nv[0]);
+               v = decodeURIComponent(nv[1]);
+
+               if (!parms.hasOwnProperty(n)) parms[n] = [];
+               parms[n].push(nv.length === 2 ? v : null);
+           }
+           return parms;
+       }
+
+       window.onload = function () {
+           canvas = document.getElementById("dibujo");
+           context  = canvas.getContext("2d");
+           var url = window.location.href;
+           var data = parseURLParams(url);
+           iniciar();
+           var newtons = calculo();
+
+           var resultado = calculo();
+           if(resultado>200){
+               too_strong_interval = setInterval(too_strong, 1000)
+           };
+           if(resultado<200){
+               too_slow();
+           }
+       }
+
+       function too_strong(){
+           context.clearRect(0, 0, canvas.width, canvas.height);
+           context.drawImage(villano, 180, 30,100,100);
+           x+=40;
+           cont++;
+
+
+           if(cont > 5) {
+               x= x - 80;
+               context.drawImage(villano, 370, 80,100,100);
+               context.drawImage(img[img_a_mostrar], x, 30,100,100);
+           }
+           if (cont === 10){
+               clearInterval(too_strong_interval);
+           }
+           context.drawImage(img[cont], x, 30,100,100);
+           img_a_mostrar++;
+           if(img_a_mostrar>2){
+               img_a_mostrar=0;
+           }
+
+       }
+
+       function too_slow() {
+
+       }
+
+       function iniciar() {
+           //le decimos la ruta de la imagen, en este caso html5.jpg
+           img[0].src = "Imágenes/secuencia7.PNG";
+           img[1].src = "Imágenes/secuencia9.PNG";
+           img[2].src = "Imágenes/secuencia10.PNG";
+           img[3].src = "Imágenes/secuencia11.PNG";
+
+
+
+           img[0].onload = function(){
+               context.drawImage(img[0], 10, 30,100,100);
+           }
+           context.drawImage(villano, 180, 30,100,100);
+           villano.onload = function () {
+               context.drawImage(villano, 180, 30,100,100);
+           }
+       }
+
+       function img_canvas() {
+           cont++;
+           if(cont > 5) {
+               parar();
+           }
+
+           context.drawImage(img[img_a_mostrar], x, 30,100,100);
+           context.drawImage(villano, 180, 30,100,100);
+           img_a_mostrar++;
+           if(img_a_mostrar>1){
+               img_a_mostrar=0;
+           }
+       }
+
+       function calculo(){
+           var n;
+           var a;
+           var masa;
+           n=masa*a;
+           console.log (n);
+           return 450;
+
+       }
+
+
+
+        //var mi_intervalo = setInterval(img_canvas,100);
+
+        function parar() {
+            clearInterval(mi_intervalo);
+        }
+
+       function aviso() {
+           alert("Pegale mas fuerte");
+
+       }
+   </script>
+   <div class="resultados">
+       <h2 id="Titulo1">Fuerza:</h2><p>calculo()</p>
+   </div>
+>>>>>>> 64d0828a281a69ff4023cdcc5d2a1d42a94a6207
 </body>
 
 </html>

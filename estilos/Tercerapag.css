@@ -1,5 +1,32 @@
+/*
 body {
     background-image: url("https://img1.cgtrader.com/items/148070/b23c0f179d/large/matrix-dojo-3d-model-max-mat.jpg");
+}
+*/
+
+
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/006/376/764/large/marco-petracca-highresscreenshot00000.jpg?1498125174");
+    background-size: cover;
+    background-position: center;
+}
+
+.img-canvas {
+    /*border: none;*/
+    height: 50vh;
+    width: 60vw;
+    padding: 0;
+    margin: 0;
 }
 
 button{
@@ -14,11 +41,14 @@ canvas{
     width: 350px;
     height: 200px;
     margin-left: 400px;
-    background-color: transparent;
+    background-color: white;
     padding: 100px;
     border-style: solid;
     border-color: black;
 
+}
+.resultados{
+    padding: 100px;
 }
 #Titulo1{
     border-left-width: 100px;
@@ -26,7 +56,7 @@ canvas{
     color: white;
     padding: 5px;
     position: fixed;
-    bottom: 160px;
+    bottom: 79px;
 
 }
 #Titulo2{
@@ -35,7 +65,7 @@ canvas{
     color: white;
     padding: 5px;
     position: fixed;
-    bottom: 100px;
+    bottom: 40px;
 }
 #Titulo3{
     border-left-width: 100px;
@@ -44,6 +74,7 @@ canvas{
     color: white;
     padding: 5px;
     position: fixed;
-    bottom: 40px;
+    bottom: 0px;
 }
+
 

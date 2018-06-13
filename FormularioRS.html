@@ -10,6 +10,28 @@
 <header>
     <h2>¡Elige la mejor estrategia de ataque!</h2>
 </header>
+<script>
+    function pasarValor() {
+        var el = document.getElementById("formValores").elements;
+        var urlVar = 'Tercerapag.html#' + el["ac_valor"].value + "#" + el["ac_unidad"].value + "#"
+            + el["peso_valor"].value + "#" + el["peso_unidad"].value;
+
+        window.location.assign(urlVar);
+    }
+
+    function cargarValor() {
+        var elArray = window.location.hash.split('#');
+
+        var ac_valor = elArray[1];
+        var ac_unidad = elArray[2];
+        var peso_valor = elArray[3];
+        var peso_unidad = elArray[4];
+
+        //Realizar algún cálculo o mostrar los datos en la página
+    }
+
+
+</script>
 
 <section>
     <form id="formValores">
@@ -22,6 +44,7 @@
                 <option value="k/h">k/h</option>
             </select>
 
+<<<<<<< HEAD
             <h1 id="titulo2">Peso de nuesto héroe</h1>
             <input name="pr" type="number" id="peso_valor">
             <select name="pesoprot" id="peso_unidad">
@@ -35,6 +58,26 @@
                 <option value="kg">kg</option>
                 <option value="g">g</option>
             </select>
+=======
+                <h1 id="titulo1">Aceleración</h1>
+                <input type="number">
+                <select name="aceleracion">
+                    <option value="m/s">m/s2</option>
+                    <option value="k/h">k/h2</option>
+                </select>
+                 <h1 id="titulo2">Peso de nuesto héroe</h1>
+                <input name="pr" type="number">
+                <select name="pesoprot">
+                    <option value="kg">kg</option>
+                    <option value="g">g</option>
+                </select>
+         </div>
+        <br>
+        <div class="button">
+        <form action="Tercerapag.html">
+            <button type="submit">Hit!</button>
+        </form>
+>>>>>>> 64d0828a281a69ff4023cdcc5d2a1d42a94a6207
         </div>
     </form>
     <br>
