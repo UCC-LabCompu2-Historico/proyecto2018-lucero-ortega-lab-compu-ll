@@ -11,14 +11,16 @@
         <h2>¡Elige la mejor estrategia de ataque!</h2>
 </header>
 <script>
-    function pasarValor() {
+
+
+    function pasarValor() { //Paso los valores a la URL
         var el = document.getElementById("formValores").elements;
         var urlVar = 'Tercerapag.html#' + el["aceleracion"].value + "#" + el["unidad1"].value + "#"
             + el["pesoprot"].value + "#" + el["unidad2"].value + "#" + el["unidad1"].value;
 
         window.location.assign(urlVar);
     }
-    function comprobar() {
+    function comprobar() { //Validación de los valores cargados por el usuario
         var valorp = document.getElementById("pesprot").value
         var valorac = document.getElementById("ac").value
         if (valorp < 0) {

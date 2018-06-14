@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="Tercerapag.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+   <div class="wrapper">
+
+       <canvas class="img-canvas" id="dibujo">
+
+       </canvas>
+
+   </div>
+
+
+   <script>
+       var img = []
+       // Draw dummy
+       var villano = new Image();
+       for(var i=0;i<6;i++){
+           img.push(new Image());
+       }
+       villano.src = "Imágenes/Training_Dummy.png";
+       var x  = 0.5;
+       var canvas ;
+       var context;
+       var img_a_mostrar = 0;
+       var cont = 0;
+
+       function parseURLParams(url) {
+           var queryStart = url.indexOf("?") + 1,
+               queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+               query = url.slice(queryStart, queryEnd - 1),
+               pairs = query.replace(/\+/g, " ").split("&"),
+               parms = {}, i, n, v, nv;
+
+           if (query === url || query === "") return;
+
+           for (i = 0; i < pairs.length; i++) {
+               nv = pairs[i].split("=", 2);
+               n = decodeURIComponent(nv[0]);
+               v = decodeURIComponent(nv[1]);
+
+               if (!parms.hasOwnProperty(n)) parms[n] = [];
+               parms[n].push(nv.length === 2 ? v : null);
+           }
+           return parms;
+       }
+
+
+       window.onload = function () {
+           canvas = document.getElementById("dibujo");
+           context  = canvas.getContext("2d");
+           var url = window.location.href;
+           var data = parseURLParams(url);
+           iniciar();
+       };
+       function iniciar() {
+           img[0].src = "Imágenes/secuencia3.PNG";
+           img[1].src = "Imágenes/secuencia7.PNG";
+           img[2].src = "Imágenes/secuencia9.PNG";
+           img[3].src = "Imágenes/secuencia10.PNG";
+           img[4].src = "Imágenes/secuencia11.PNG";
+
+           img[0].onload = function(){
+               context.drawImage(img[0], 10, 30,100,100);
+           }
+           context.drawImage(villano, 230, 30,50,100);
+       }
+       function img_canvas() {
+           cont++;
+           if(cont > 14) {
+               parar();
+           }
+            x+=9;
+           context.drawImage(img[img_a_mostrar], x, 30,100,100);
+           context.drawImage(villano, 230, 30,50,100);
+           img_a_mostrar++;
+           if(img_a_mostrar>4){
+               img_a_mostrar=0;
+           }
+       }
+       var mi_intervalo = setInterval(img_canvas,100);
+       function parar() {
+            clearInterval(mi_intervalo);
+        }
+       function cargarValor() {
+           var elArray = window.location.hash.split('#');
+           var ac_valor = elArray[1];
+           var ac_unidad = elArray[2];
+           var peso_valor = elArray[3];
+           var peso_unidad = elArray[4];
+           n=ac_valor*peso_valor;
+
+           return n;
+       }
+
+   </script>
+
+
+</body>
+
+</html>
