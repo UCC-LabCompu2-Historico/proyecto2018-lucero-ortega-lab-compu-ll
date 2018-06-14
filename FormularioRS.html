@@ -11,8 +11,11 @@
     <h2>¡Elige la mejor estrategia de ataque!</h2>
 </header>
 <script>
-    function pasarValor() {
+
+
+    function pasarValor() { //Paso los valores a la URL
         var el = document.getElementById("formValores").elements;
+<<<<<<< HEAD
         var urlVar = 'Tercerapag.html#' + el["ac_valor"].value + "#" + el["ac_unidad"].value + "#"
             + el["peso_valor"].value + "#" + el["peso_unidad"].value;
         window.location.assign(urlVar);
@@ -24,10 +27,30 @@
         var peso_valor = elArray[3];
         var peso_unidad = elArray[4];
         //Realizar algún cálculo o mostrar los datos en la página
+=======
+        var urlVar = 'Tercerapag.html#' + el["aceleracion"].value + "#" + el["unidad1"].value + "#"
+            + el["pesoprot"].value + "#" + el["unidad2"].value + "#" + el["unidad1"].value;
+
+        window.location.assign(urlVar);
+    }
+    function comprobar() { //Validación de los valores cargados por el usuario
+        var valorp = document.getElementById("pesprot").value
+        var valorac = document.getElementById("ac").value
+        if (valorp < 0) {
+            alert('[ERROR] El luchador es demasiado delgado. ¡Lo van a destrozar!');
+            return false;
+        }
+        if (valorac == 0){
+            alert ('[ERROR] ¡Muévete,flojo!');
+            return false;
+        }
+        return true;
+>>>>>>> gh-pages
     }
 </script>
 
 <section>
+<<<<<<< HEAD
     <form action="Tercerapag.html">
         <div id="celdas">
 
@@ -49,6 +72,29 @@
             <form action="Tercerapag.html">
                 <button type="submit">Hit!</button>
             </form>
+=======
+    <form id="formu" action="Tercerapag.html" onsubmit="return comprobar()">
+         <div id="celdas">
+
+                <label id="titulo1">Aceleración</label>
+                <input name="aceleracion" id= "ac" type="number">
+                <select name="unidad1">
+                    <option value="m/s">m/s2</option>
+                    <option value="k/h">k/h2</option>
+                </select>
+                 <label id="titulo2">Peso de nuesto héroe</label>
+                <input id = "pesprot" name="pesprot" type="number">
+                <select name="unidad2">
+                    <option value="kg">kg</option>
+                    <option value="g">g</option>
+                </select>
+         </div>
+        <br>
+        <div class="button">
+        <form action="Tercerapag.html">
+            <button type="submit" >Hit!</button>
+        </form>
+>>>>>>> gh-pages
         </div>
     </form>
 </section>

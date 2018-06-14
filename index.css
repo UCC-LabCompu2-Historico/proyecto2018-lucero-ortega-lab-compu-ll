@@ -1,5 +1,5 @@
-#titulo{
-    text-decoration-color: white;
+header{
+    color: white;
     background-color: black;
     font-weight: bolder;
     padding: inherit;
@@ -7,9 +7,13 @@
 
 body {
     text-align: center;
+<<<<<<< HEAD
 
 
 
+=======
+    background-image: url("Imágenes/ImagendefondoPaginaprincipal.jpg");
+>>>>>>> gh-pages
 }
 
 #textointro {
@@ -31,11 +35,17 @@ button{
     bottom: 90px;
 }
 
-.creadoras{
+footer{
     font-weight: bold;
+    color: white;
     text-decoration-color: white;
     background: black;
     padding: 5px;
     position: fixed;
     bottom: 40px;
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> gh-pages
