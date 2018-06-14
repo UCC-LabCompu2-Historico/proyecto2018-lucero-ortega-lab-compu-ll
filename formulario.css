@@ -12,8 +12,11 @@ body {
     color: white;
 }
 #titulo1{
-    border-left-width: 10vh ;
-    background-color: black;
+    font-weight: bold;
+    color: white;
+    text-decoration-color: white;
+    background: black;
+    bottom: 40px;
 }
 #titulo2{
     border-left-width: 10vh;

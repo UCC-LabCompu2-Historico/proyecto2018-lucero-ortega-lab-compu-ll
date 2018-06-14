@@ -1,8 +1,11 @@
 header{
-    color: white;
+    text-decoration-color: white;
+    margin-left: 20px;
     background-color: black;
     font-weight: bolder;
-    padding: inherit;
+    padding: 20px;
+    color: white;
+    background-size: 10px;
 }
 
 body {

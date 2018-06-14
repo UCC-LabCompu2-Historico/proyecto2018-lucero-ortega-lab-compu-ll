@@ -44,12 +44,9 @@ canvas{
 }
 
 .button {
-    padding: 5px;
-<<<<<<< HEAD
-    position: fixed;
-    bottom: 0px;
+    text-align: center;
+
 }
-=======
     position: relative;
     bottom: 79px;
 }
