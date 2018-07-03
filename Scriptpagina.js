@@ -52,7 +52,7 @@ function posibilidades() {
     }
 }
 
-var img = []
+var img = [];
 var villano = new Image(); //Dibujo al villano
 for (var i = 0; i < 6; i++) { //Dibujo personaje
     img.push(new Image());
