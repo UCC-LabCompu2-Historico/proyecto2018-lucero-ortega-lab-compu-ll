@@ -1,39 +1,55 @@
-
-header{
+body {
+    background-image: url("Imagenes/ImagendefondoFormulario.jpg");
+    text-align: center;
+    text-decoration-color: black;
+    color: white;
+}
+header {
     text-decoration-color: white;
     background-color: black;
     font-weight: bolder;
     padding: 10px;
 }
-body {
-    background-image: url("Imágenes/ImagendefondoFormulario.jpg");
+form {
     text-align: center;
-    text-decoration-color: black;
-    color: white;
-}
-#titulo1{
     font-weight: bold;
-    color: white;
-    text-decoration-color: white;
-    background: black;
-    bottom: 40px;
+    padding-top: 5vh;
 }
-#titulo2{
+aside{
+    text-align: center;
+    color: black;
+    text-decoration-color: white;
+}
+#titulo1 {
+    border-left-width: 10vh ;
+    background-color: black;
+}
+#titulo2 {
     border-left-width: 10vh;
     background-color: black;
 }
 #titulo3{
     border-left-width: 10vh;
+    background-color: white;
+}
+canvas {
+    position: relative;
+    width: 125vh;
+    height: 325px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    background-color: white;
+    padding-top: 0.5% ;
+    padding-bottom: 1%;
+    margin-left: 4vh;
+}
+button{
+    padding-bottom: 10vh;
+}
+footer{
     background-color: black;
-}
-form{
-    text-align: center;
-    font-weight: bold;
-    padding-top: 10vh;
-}
-
-.button{
-    padding: auto;
+    color: white;
+    padding-bottom: 1vh;
 }
 
 

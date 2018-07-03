@@ -1,33 +1,22 @@
 header{
-    text-decoration-color: white;
-    margin-left: 20px;
+    color: white;
     background-color: black;
     font-weight: bolder;
-    padding: 20px;
-    color: white;
-    background-size: 10px;
+    padding: inherit;
 }
-
 body {
     text-align: center;
-    background-image: url("Imágenes/ImagendefondoPaginaprincipal.jpg");
-
-}
-
-#textointro {
-    text-decoration-color: white;
-    font-weight: bold;
-    padding-left: inherit;
+    background-image: url("Imagenes/ImagendefondoPaginaprincipal.jpg");
 }
 
 .imagenprot{
     padding-right: auto;
-
 }
+
 aside{
     margin: 50px;
-    position: relative}
-
+    position: relative;
+}
 
 button{
     bottom: 90px;
@@ -41,9 +30,4 @@ footer{
     padding: 5px;
     position: fixed;
     bottom: 40px;
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> gh-pages
